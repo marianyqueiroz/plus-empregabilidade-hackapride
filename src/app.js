@@ -9,7 +9,7 @@ const empresas = require("./routes/empresasRoute");
 const colaboradores = require("./routes/colaboradoresRoute");
 const vagas = require("./routes/vagasRoute");
 
-mongoose.connect("mongodb://localhost:27017/plus",  { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://Mariany:marilinda@cluster0.qpbsb.mongodb.net/plus?retryWrites=true&w=majority",  { useNewUrlParser: true, useUnifiedTopology: true });
 
 let db = mongoose.connection;
 db.on("error", console.log.bind(console, "connection error:"));
@@ -24,6 +24,7 @@ app.use(function(res, req, next){
         "Access-Control-Allow-Headers",
         "Origin, X-Request-With, Content-Type, Accept"
     );
+    next();
 });
 app.use("/", index);
 app.use("/empresas", require("./routes/empresasRoute"));
