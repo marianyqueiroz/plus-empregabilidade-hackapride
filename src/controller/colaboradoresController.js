@@ -1,9 +1,9 @@
-const Colaboradores = require('../models/colaboradores');
+const colaboradores = require('../model/colaboradores');
 const fs = require("fs");
 
 const getAll = (req, res) => {
   console.log(req.url);
-    Colaboradores.find(function (err, colaboradores) {
+    colaboradores.find(function (err, colaboradores) {
       res.status(200).send(colaboradores);
     })
 };

@@ -1,4 +1,4 @@
-const Vagas = require('../models/vagas');
+const Vagas = require('../model/vagas');
 const fs = require("fs");
 
 const getAll = (req, res) => {
@@ -10,7 +10,7 @@ const getAll = (req, res) => {
 
 const getById = (req, res) => {
   const id = req.params._id;
-    vagas.find({id}, function(err, vagas) {
+    Vagas.find({id}, function(err, vagas) {
         res.status(200).send(vagas);
     })  
 };

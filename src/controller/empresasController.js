@@ -1,4 +1,4 @@
-const Empresas = require('../models/empresas');
+const Empresas = require('../model/empresas');
 const fs = require("fs");
 
 const getAll = (req, res) => {
@@ -10,7 +10,7 @@ const getAll = (req, res) => {
 
 const getById = (req, res) => {
   const id = req.params._id;
-    empresas.find({id}, function(err, empresas) {
+    Empresas.find({id}, function(err, empresas) {
         res.status(200).send(empresas);
     })  
 };

@@ -8,7 +8,9 @@ const colaboradoresSchema = new mongoose.Schema({
     cidade: { type: String},
     escolaridade: { type: String },
     CapacitacaoPlus: { type: Boolean},
-    Busca: { type: String }
+    Busca: { type: String },
+    email: { type: String },
+    senha: { type: String }
 },{
     versionKey: false
 });
