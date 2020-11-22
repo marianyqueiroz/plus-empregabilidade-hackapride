@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const empresasSchema = new mongoose.Schema({
+const vagasSchema = new mongoose.Schema({
     cod: { type : Number},
     vaga: { type: String },
     descricao: { type: String },
@@ -10,6 +10,6 @@ const empresasSchema = new mongoose.Schema({
     versionKey: false
 });
 
-const Empresas = mongoose.model('Empresas', empresasSchema);
+const Vagas = mongoose.model('Vagas', vagasSchema);
 
-module.exports = Empresas;
+module.exports = Vagas;

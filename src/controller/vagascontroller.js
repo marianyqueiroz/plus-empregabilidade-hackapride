@@ -1,17 +1,17 @@
-const Vagas = require('../model/vagas');
+const vagas = require('../model/vagas');
 const fs = require("fs");
 
 const getAll = (req, res) => {
   console.log(req.url);
-    Vagas.find(function (err, vagas) {
+    vagas.find(function (err, vagas) {
       res.status(200).send(vagas);
     })
 };
 
-const getById = (req, res) => {
-  const id = req.params._id;
-    Vagas.find({id}, function(err, vagas) {
-        res.status(200).send(vagas);
+const getByVaga = (req, res) => {
+  const vaga = req.params.vaga;
+    vagas.find({vagas}, function(err, vaga) {
+        res.status(200).send(vaga);
     })  
 };
 
@@ -72,7 +72,8 @@ const putVaga = (req, res) => {
 
 module.exports = {
   getAll,
-  getById,
+  getByVaga,
+  getByCidade,
   postVaga,
   deleteVaga,
   putVaga
