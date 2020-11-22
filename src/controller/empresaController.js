@@ -37,7 +37,7 @@ const deleteEmpresa = (req, res) => {
             return res.status(424).send({ message: err });
         };
 
-        console.log("Empresa adicionado com sucesso!");
+        console.log("Empresa adicionada com sucesso!");
 
     });
 
@@ -50,7 +50,7 @@ const putEmpresa = (req, res) => {
 
   try {
     
-    Colaboradores.update(
+    Empresas.update(
         { id },
         { $set: req.body },
         { upsert : true},
